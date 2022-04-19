@@ -30,7 +30,7 @@ public class 圆环回原点 {
     }
 
     public static void main(String[] args) {
-       int result = back2Ori(4);
+       int result = back2Ori(10);
        System.out.println(result);
     }
 }

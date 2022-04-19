@@ -27,6 +27,7 @@ public class 全排列 {
                 if (!tmp.contains(num)) {
                     tmp.add(num);
                     dfs(nums, tmp);
+                    //回溯到前一个继续其它路径试探
                     tmp.remove(tmp.size() - 1);
                 }
             }

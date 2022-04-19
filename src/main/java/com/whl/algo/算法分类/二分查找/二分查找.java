@@ -47,6 +47,7 @@ public class 二分查找 {
         return 0;
     }
 
+    //2,3,8,4,5 当 i=3 temp=3 交换 2,3,4,8,5
     public static int partition(Integer[] arr, int left, int right) {
         int temp = left - 1;
         for(int i = left; i < right; i++) {//最 arr[right]作为 pivot

@@ -8,29 +8,20 @@ import com.alibaba.fastjson.JSON;
 public class 螺旋矩阵 {
 
     public  static int[][]  rotate(int[][] maxtrix){
-        int i=0,j=0;
-        int n = maxtrix.length;
-        int num = 1;
-        while (num<=n*n) {
-            while (j<n){
-                if(j==n-1 || maxtrix[i][j+1]==0){
-                    maxtrix[i][j]=num++;
-                }
+        int N= maxtrix.length;
+        int num =1;
+        for(int n=0;n<N/2;n++){
+            for(int j=n;j<N-n-1;j++){//向右
+                maxtrix[n][j]=num++;
             }
-            while (i<n){
-                if(i==n-1 || maxtrix[i+1][j]==0){
-                    maxtrix[i++][j]=num++;
-                }
+            for(int j=n;j<N-n-1;j++){//向下
+                maxtrix[n][N-n-1]=num++;
             }
-            while (j>=0){
-                if(j==1 || maxtrix[i][j-1]==0){
-                    maxtrix[i][j--]=num++;
-                }
+            for(int j=N-n-1;j>=n+1;j--){//向左
+                maxtrix[N-n-1][j]=num++;
             }
-            while (i>=0){
-                if(i==1 || maxtrix[i-1][j]==0){
-                    maxtrix[i--][j]=num++;
-                }
+            for(int j=N-n-1;j>=n+1;j--){//向上
+                maxtrix[j][n]=num++;
             }
         }
         return maxtrix;

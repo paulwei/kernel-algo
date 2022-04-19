@@ -3,7 +3,7 @@ package com.whl.algo.算法分类.动归;
 /*
 * {6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(
 * 思路:动态规划
-* Math.max(max + array[i], array[i]),如果比array[i]小从该 i再开始
+* Math.max(max + array[i], array[i]),如果比array[i]小从该 i再开始,只要 max不为负数即可
 * */
 public class 最大子序和 {
     public static int maxSum(int[] nums){

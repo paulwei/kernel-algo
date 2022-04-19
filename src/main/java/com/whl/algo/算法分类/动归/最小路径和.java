@@ -17,9 +17,9 @@ public class 最小路径和 {
                 if(i==0 && j==0){
                     dp[i][j] = nums[i][j];
                 } else if(i==0 && j!=0){
-                    dp[i][j]=dp[i][j-1]+nums[i][j];
+                    dp[i][j]=dp[i][j-1]+nums[i][j];//前一个向上
                 }else if(j==0 && i!=0){
-                    dp[i][j]=dp[i-1][j]+nums[i][j];
+                    dp[i][j]=dp[i-1][j]+nums[i][j];//前一个向左
                 }else{
                     dp[i][j]=Math.min(dp[i-1][j],dp[i][j-1])+nums[i][j];
                 }

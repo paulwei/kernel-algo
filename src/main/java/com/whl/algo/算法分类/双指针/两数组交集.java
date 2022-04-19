@@ -27,7 +27,7 @@ public class 两数组交集 {
                 j++;
             }else{
                 nums1[k]=nums1[i];
-                i++;j++;k++;
+                i++;j++;k++;//K元素交集
             }
         }
       return  Arrays.copyOfRange(nums1,0,k);

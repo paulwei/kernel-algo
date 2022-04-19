@@ -1,7 +1,7 @@
 package com.whl.algo.算法分类.动归;
 
 /*
-*
+*思路:差值最大
 *
 * */
 public class 股票最大收益 {

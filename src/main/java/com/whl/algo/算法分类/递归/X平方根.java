@@ -1,27 +1,17 @@
-package com.whl.algo.算法分类.二分查找;
+package com.whl.algo.算法分类.递归;
 
 public class X平方根 {
 
     public static int  sqrt(int x){
-        int l=0;
-        int r = x/2;
-        while (l<r){
-            int mid = l + (r - l) / 2;  // 直接采用(r+l)/2. 容易出现整形溢出
-            double p1= mid*mid;
-            double p2= (mid+1)*(mid+1);
-            if(x==p1){
-                return mid;
-            }
-            if(x==p2){
-                return mid+1;
-            }
-            if(p1>x){
-                r = mid-1;
-            }else{
-                l=  mid+1;
-            }
+        if(x==0){
+            return 0;
         }
-        return 1;
+        int r  = sqrt(x-1);
+        int r2 = r+1;
+        if(x<r2*r2){
+            return r;
+        }
+        return r+1;
     }
 
     public static void main(String[] args) {

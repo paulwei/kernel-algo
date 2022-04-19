@@ -1,11 +1,14 @@
 package com.whl.algo.算法分类.数理;
 import com.alibaba.fastjson.JSON;
 /*
-*思路:连续正整数
+* 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
+* 输入：nums = [1,2,0]
+* 输出：3
+ *思路:连续正整数
 * */
 public class 连续正整数缺失 {
     public static void main(String[] args) {
-        int[] nums = {9,15,6,4,2,3,5,7,1};
+        int[] nums = {9,15,6,4,2,3,5,8,1};
         int result = firstMissingPositive(nums);
         System.out.println(result);
     }
@@ -26,6 +29,7 @@ public class 连续正整数缺失 {
         for (int n : nums) {
             if (Math.abs(n) <= N) {//所有小于等于N负数,每个数对应坐标置为对应负数,缺失数对应坐标不会置为负数
                 nums[Math.abs(n) - 1] = - Math.abs(nums[Math.abs(n) - 1]) ;
+                System.out.println("n:"+n);
             }
         }
         System.out.println(JSON.toJSONString(nums));//[-9,-15,-6,-4,-2,-3,-5,7,-1]

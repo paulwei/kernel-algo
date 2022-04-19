@@ -1,19 +1,19 @@
 package com.whl.algo.算法分类.前缀和;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 /*
 * 给你一个整数数组 nums 和一个整数 k ，请你统计并返回该数组中和为 k 的连续子数组的个数。
-输入：nums = [1,2,3], k = 3
+输入：nums = [1,2,3], k = 3 前缀和:preSun[1,3,6]
 输出：2
 hash可以优化剪枝
+* 思路:前缀和 必须连续
  * */
 public class 和为K的子数组 {
 
 
-    //前缀和
+    //前缀和必须连续
     public static int subArraySum(int[] nums,int target){
         int ans =0 ;
         int[] preSum = new int[nums.length+1];
@@ -21,7 +21,7 @@ public class 和为K的子数组 {
             preSum[i+1]=preSum[i]+nums[i];
         }
         for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<preSum.length;j++){
+            for(int j=i+1;j<preSum.length;j++){//连续数组前缀和相减
                 if(preSum[j]-preSum[i]==target){
                     ans++;
                 }

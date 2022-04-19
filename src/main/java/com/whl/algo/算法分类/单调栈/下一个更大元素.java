@@ -33,7 +33,7 @@ public class 下一个更大元素 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,3,4,2};
+        int[] nums = {3,2,1,4};
         Map map = nextGreate(nums);
         System.out.println(JSON.toJSONString(map));
     }

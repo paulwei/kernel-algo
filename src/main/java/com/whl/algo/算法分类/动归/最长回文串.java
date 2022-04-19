@@ -26,7 +26,7 @@ public class 最长回文串 {
                     if(j-i<3){
                         dp[i][j]=true;
                     }else{
-                        dp[i][j]=dp[i+1][j-1];
+                        dp[i][j]=dp[i+1][j-1];//之前已计算过
                     }
                 }
                   // 只要 dp[i][j] == true 成立，就表示子串 s[i..j] 是回文，此时记录回文长度和起始位置

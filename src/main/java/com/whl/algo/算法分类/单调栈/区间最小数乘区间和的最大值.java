@@ -1,12 +1,9 @@
 package com.whl.algo.算法分类.单调栈;
 
-import com.alibaba.fastjson.JSON;
-
-import java.util.Arrays;
 import java.util.Stack;
 
 /*
-* 所有子集
+* 所有子集,区间最小数*区间数和
 *[6,2,1]，对于任意子序列可以计算一个X值，X=sum(subArray) * min(subArray)，求最大X
 *[6]=6*6
 *[2]=2*2

@@ -15,14 +15,14 @@ public class 颜色分类 {
         int left = -1;
         int right = nums.length;
         while (i<right){
-            if(nums[i]==2){
+            if(nums[i]==2){//当前为 2 和最后一个元素调换
                 swap(nums,i,right-1);//如果当前为 2 就和 right-1 交换,right--
                 right--;
-            }else if(nums[i]==0){       //如果当前为 0 就和 left+1 交换,left++
+            }else if(nums[i]==0){       //如果当前为 0 就和 left+1 交换,left++,当前元素为 0 和左边交换
                 swap(nums,i,left+1);
                 left++;
                 i++;
-            }else {
+            }else {//当前元素为,下标指针后移
                 i++;
             }
         }

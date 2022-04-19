@@ -11,7 +11,7 @@ import java.util.LinkedList;
 *
 * */
 public class 模式132 {
-    public boolean find132pattern(int[] nums) {
+    public static boolean find132pattern(int[] nums) {
         int n=nums.length;
         Deque<Integer> stack=new LinkedList<>();//维护一个单调栈，从栈底到栈顶单调非递增
         int numsk=Integer.MIN_VALUE;//记录题目中的nums[k]
@@ -20,12 +20,18 @@ public class 模式132 {
             if(cur<numsk){//找到13
                 return true;
             }
-            while(!stack.isEmpty()&&cur>stack.peekFirst()){//找到32,numsk为3，cur为2
+            while(!stack.isEmpty()&&cur>stack.peekFirst()){//找到32,先入2入栈当前3,将 2 取出,3 然后放入
                 numsk=Math.max(numsk,stack.pollFirst());
             }
             stack.addFirst(cur);
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {3,1,4,2};
+        boolean result =  find132pattern(nums);
+        System.out.println(result);
     }
 
 }
