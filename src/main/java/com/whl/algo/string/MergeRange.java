@@ -1,5 +1,7 @@
 package com.whl.algo.string;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +24,12 @@ public class MergeRange {
                 anchor = i + 1;
             }
         }
+        System.out.println(JSON.toJSONString(last));
         return ans;
     }
 
     public static void main(String[] args) {
-        new MergeRange().partitionLabels("abccaddbeffe");
+        List<Integer> result =  new MergeRange().partitionLabels("abaaced");
+        System.out.println(result);
     }
 }

@@ -6,7 +6,7 @@ package com.whl.algo.string;
 public class TwoStrEq {
     public static void main(String[] args) {
         String s = "aac";
-        String t = "aba";
+        String t = "aca";
         boolean result = isEq(s,t);
         System.out.println(result);
     }
@@ -18,7 +18,7 @@ public class TwoStrEq {
             arr[s.charAt(i) - 'a'] += 1;
         }
         for (int i = 0;i < t.length();i ++) {
-            arr[s.charAt(i) - 'a'] -= 1;
+            arr[t.charAt(i) - 'a'] -= 1;
         }
         for (int i : arr) {
             if (i != 0)return false;
