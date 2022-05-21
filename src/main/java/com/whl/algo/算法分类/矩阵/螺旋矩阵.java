@@ -4,49 +4,57 @@ import com.alibaba.fastjson.JSON;
 
 /*
 * 螺旋矩阵编号
+* 解题思路：四条边界 top right down left
+* i,j 坐标
+* j++循环,top+1; i++循环,right-1; j--循环,down-1; i--循环,left+1;
+ *
+*
 * */
 public class 螺旋矩阵 {
-
-    public  static int[][]  rotate(int[][] maxtrix){
-        int N= maxtrix.length;
-        int num =1;
-        for(int n=0;n<N/2;n++){
-            for(int j=n;j<N-n-1;j++){//向右
-                maxtrix[n][j]=num++;
+    public  static void  rotate(int[][] matrix){
+        int left = 0;
+        int right = matrix.length-1;
+        int top = 0;
+        int down = matrix.length-1;
+        int num=1;
+        while (true){
+            for(int i=left;i<=right;i++){
+                matrix[top][i]=num++;
             }
-            for(int j=n;j<N-n-1;j++){//向下
-                maxtrix[n][N-n-1]=num++;
+            top++;
+            if (top > down) break;
+            for(int i=top;i<=down;i++){
+                matrix[i][right]=num++;
             }
-            for(int j=N-n-1;j>=n+1;j--){//向左
-                maxtrix[N-n-1][j]=num++;
+            right--;
+            if (left > right) break;
+            for(int i=right;i>=left;i--){
+                matrix[down][i]=num++;
             }
-            for(int j=N-n-1;j>=n+1;j--){//向上
-                maxtrix[j][n]=num++;
+            down--;
+            if (top > down) break;
+            for(int i=down;i>=top;i--){
+                matrix[i][left]=num++;
             }
+            left++;
+            if (left > right) break;
         }
-        return maxtrix;
     }
 
-    public int[][] generateMatrix(int n) {
-        int l = 0, r = n - 1, t = 0, b = n - 1;
-        int[][] mat = new int[n][n];
-        int num = 1, tar = n * n;
-        while(num <= tar){
-            for(int i = l; i <= r; i++) mat[t][i] = num++; // left to right.
-            t++;
-            for(int i = t; i <= b; i++) mat[i][r] = num++; // top to bottom.
-            r--;
-            for(int i = r; i >= l; i--) mat[b][i] = num++; // right to left.
-            b--;
-            for(int i = b; i >= t; i--) mat[i][l] = num++; // bottom to top.
-            l++;
+    public static void init(int[][] arr) {
+        int val = 1;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[i].length;j++){
+                arr[i][j]=val++;
+            }
         }
-        return mat;
     }
 
 
     public static void main(String[] args) {
-        int[][] matrix = new int[4][4];
+        int[][] matrix = new int[3][3];
+//        init(matrix);
+//        System.out.println(JSON.toJSONString(matrix));
         rotate(matrix);
         System.out.println(JSON.toJSONString(matrix));
     }

@@ -1,5 +1,8 @@
 package com.java.thread.type;
 
+/*
+* t.join()等待线程t执行完后再执行当前线程
+* */
 public class JoinDemo {
         public static void main(String[] args) {
             //初始化线程t1,由于后续有匿名内部类调用这个对象,需要用final修饰

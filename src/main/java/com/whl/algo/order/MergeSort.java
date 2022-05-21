@@ -3,7 +3,11 @@ package com.whl.algo.order;
 import com.alibaba.fastjson.JSON;
 
 import java.util.Arrays;
-
+/*
+* 递归思想：
+* 先递归拆分，然后合并两个有序子集
+*
+* */
 public class MergeSort {
     public static void main(String []args){
         int []arr = {7,9,4,8};

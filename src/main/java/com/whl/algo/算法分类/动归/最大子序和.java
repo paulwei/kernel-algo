@@ -10,7 +10,7 @@ public class 最大子序和 {
         int max = Integer.MIN_VALUE;
         int res = Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
-            max = Math.max(max+nums[i],nums[i]);
+            max = Math.max(max+nums[i],nums[i]);//只要和比当前元素大，就有累加最大值可能
             System.out.println(String.format("i:%s,max:%s",i,max));
             res = Math.max(res,max);//可能后序相加还没之前最大值
         }
