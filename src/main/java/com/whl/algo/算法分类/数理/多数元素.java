@@ -7,8 +7,14 @@ import java.util.Arrays;
 * 而在数组b = {1,2,5,5,5,9,7,6,4}，数组总长度为9，5虽然同样是出现次数最多的元素，但他的出现次数只有3次，因而不能算作多数元素。
 * */
 public class 多数元素 {
-    public int majorityElement(int[] nums) {
+    public static int majorityElement(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
+    }
+
+    public static void main(String[] args) {
+      int[] arr= {2,2,1,1,1,2,2};
+      int ans = majorityElement(arr);
+      System.out.println(ans);
     }
 }

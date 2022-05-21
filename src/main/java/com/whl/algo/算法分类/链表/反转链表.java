@@ -4,6 +4,8 @@ package com.whl.algo.算法分类.链表;
 *
 * */
 public class 反转链表{
+
+    //递归
     public static ListNode reverseList(ListNode head) {
         //递归终止条件是当前为空，或者下一个节点为空
         if(head==null || head.next==null) {
@@ -22,13 +24,27 @@ public class 反转链表{
         return cur;
     }
 
+    //双指针
+    public static ListNode reverseList2(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur!=null){
+            ListNode temp = cur.next; //第三个节点临时
+            cur.next=pre;
+            pre = cur;
+            cur=temp;
+        }
+        return pre;
+    }
+
+
     public static void main(String[] args) {
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
         ListNode c = new ListNode(3);
         a.next=b;
         b.next=c;
-        ListNode r = reverseList(a);
+        ListNode r = reverseList2(a);
         while (r!=null){
             System.out.println(r.val);
             r = r.next;

@@ -1,4 +1,4 @@
-package com.whl.algo.算法分类.并查集;
+package com.whl.algo.算法分类.深度遍历;
 
 /*
 * 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
@@ -10,34 +10,35 @@ package com.whl.algo.算法分类.并查集;
   ["0","0","1","0","0"],
   ["0","0","0","1","1"]
 ]
-输出：3
+输出：岛屿数量：3 最大面积 4
 *
-* 思路一：1)深度递归遍历
-* 思路二：1)并查集
+* 思路：1)深度递归遍历
+*
 * */
-public class 岛屿数量 {
-    public static int countIsland(int[][] grid) {
-        int count = 0;
+public class 岛屿最大面积 {
+    public static int maxAreaIsland(int[][] grid) {
+        int max = 0;
         for(int i=0;i<grid.length;i++){
             for(int j=0;j<grid[0].length;j++){
                 if(grid[i][j]==1){
-                    count++;
-                    dfs(grid,i,j);
+                    max =Math.max(max,dfs(grid,i,j));
                 }
             }
         }
-        return count;
+        return max;
     }
 
-    public static void dfs(int[][] grid,int i,int j){
+    public static int dfs(int[][] grid,int i,int j){
        if(i<0 || j<0 || i>=grid.length || j>grid.length || grid[i][j]==0){
-            return;
+            return 0;
        }
+       int sum = 1;
        grid[i][j]=0;
-       dfs(grid,i+1,j);
-       dfs(grid,i-1,j);
-       dfs(grid,i,j+1);
-       dfs(grid,i,j-1);
+       sum += dfs(grid,i+1,j);
+       sum += dfs(grid,i-1,j);
+       sum += dfs(grid,i,j+1);
+       sum += dfs(grid,i,j-1);
+       return sum;
     }
 
     public static void main(String[] args) {
@@ -49,7 +50,7 @@ public class 岛屿数量 {
         grid[2][2]=1;
         grid[3][3]=1;
         grid[3][4]=1;
-        int ans = countIsland(grid);
+        int ans = maxAreaIsland(grid);
         System.out.println(ans);
     }
 

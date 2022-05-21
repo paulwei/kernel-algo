@@ -10,8 +10,8 @@ public class 股票最大收益 {
         Integer lowest = Integer.MAX_VALUE;
         Integer max = Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
-            lowest = Math.min(lowest,nums[i]);
-            max = Math.max(max,nums[i]-lowest);
+            lowest = Math.min(lowest,nums[i]);//买入最低值
+            max = Math.max(max,nums[i]-lowest);//当前减去最低值差值最大值
         }
         return max;
     }

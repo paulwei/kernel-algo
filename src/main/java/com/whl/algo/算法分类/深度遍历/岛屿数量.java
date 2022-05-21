@@ -1,4 +1,4 @@
-package com.whl.algo.算法分类.并查集;
+package com.whl.algo.算法分类.深度遍历;
 
 /*
 * 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
@@ -12,8 +12,8 @@ package com.whl.algo.算法分类.并查集;
 ]
 输出：3
 *
-* 思路一：1)深度递归遍历
-* 思路二：1)并查集
+* 思路：1)深度递归遍历
+*
 * */
 public class 岛屿数量 {
     public static int countIsland(int[][] grid) {
