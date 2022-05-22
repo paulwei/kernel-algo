@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSON;
 /*
 * 螺旋矩阵编号
 * 解题思路：四条边界 top right down left
-* i,j 坐标
+* i,j 坐标 局部定义
 * j++循环,top+1; i++循环,right-1; j--循环,down-1; i--循环,left+1;
  *
 *

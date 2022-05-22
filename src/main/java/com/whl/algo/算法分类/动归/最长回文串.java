@@ -19,7 +19,7 @@ public class 最长回文串 {
             dp[i][i]=true;
         }
         for(int j=1;j<len;j++){
-              for(int i=0;i<j;i++){
+              for(int i=0;i<j;i++){ //i到j,j走一步，i从0到j
                 if(charArray[i]!=charArray[j]){
                     dp[i][j]=false;
                 }else{
@@ -37,6 +37,5 @@ public class 最长回文串 {
               }
         }
         return s.substring(begin, begin + maxLen);
-
     }
 }

@@ -14,7 +14,7 @@ public class 最长有效括号 {
     public int longestValidParentheses(String s) {
         int maxans = 0;
         Deque<Integer> stack = new LinkedList<Integer>();
-        stack.push(-1);
+        stack.push(-1);//() 1-(-1) 隔断重新
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') { //遇到左括号入栈
                 stack.push(i);
