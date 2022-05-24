@@ -5,7 +5,7 @@ package com.whl.algo.算法分类.递归;
 * 移除后一个从 1 开始继续
 * 输入 int n=5 ,int m=3
 * 输出 4
-* 思路:
+* 思路: 递归，队列长度杀掉m前面追加最后m+x/n
 * */
 public class 约瑟夫环 {
 
