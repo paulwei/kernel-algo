@@ -11,11 +11,11 @@ public class 最大连续子序平均数 {
         double max = Integer.MIN_VALUE;
         double sum = 0;
         for(int i=0;i<k;i++){
-            sum+=nums[i];//K个sum
+            sum+=nums[i];//K个sum前缀和
         }
         System.out.println(sum);
         for(int j=k;j<nums.length;j++){
-            sum+=nums[j]-nums[j-k];
+            sum+=nums[j]-nums[j-k];//j-j+k
             System.out.println("sum:"+sum);
             max = Math.max(max,sum);
         }

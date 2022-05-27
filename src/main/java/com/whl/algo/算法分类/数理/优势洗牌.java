@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
 * 输出：[2,11,7,15]
 * 输入：nums1 = [12,24,8,32], nums2 = [13,25,32,11]
 * 输出：[24,32,8,12]
-* 思路：
+* 思路：先排序，优先最大和最大比，如果比不过，反而用最小比放弃本次机会，给以下更大机会
 * */
 public class 优势洗牌 {
     public static int[] advantageCount(int[] nums1, int[] nums2) {

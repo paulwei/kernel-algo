@@ -13,9 +13,9 @@ public class 重复数 {
         Arrays.fill(home,-1);
         for(int i=0;i<nums.length;i++){
             if(home[nums[i]]==-1){
-                home[nums[i]]=nums[i];
+                home[nums[i]]=nums[i];//对应数字填充对应坐标内
             }else{
-                return nums[i];
+                return nums[i];       //如果对应坐标有数字，则返回该重复数字
             }
         }
         return 0;
@@ -36,8 +36,8 @@ public class 重复数 {
 
 
     public static void main(String[] args) {
-        int[] nums={1,2,3,4,5,3,3};
-        int result = duplicateInArray2(nums);
+        int[] nums={2,1,6,4,5,3,3};
+        int result = duplicateInArray(nums);
         System.out.println(result);
     }
 }

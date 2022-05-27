@@ -36,7 +36,7 @@ public class 买卖股票的最佳时机III {
     //
     public int maxProfit(int[] prices) {
         int n = prices.length;
-        int buy1 = -prices[0], sell1 = 0;
+        int buy1 = -prices[0], sell1 = 0;//-prices[0]花掉的前
         int buy2 = -prices[0], sell2 = 0;
         for (int i = 1; i < n; ++i) {
             buy1 = Math.max(buy1, -prices[i]);

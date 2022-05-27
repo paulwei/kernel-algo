@@ -30,8 +30,6 @@ public class 最大交换 {
                 swap(charArray,max_index,i);//8275
             }
         }
-
-
         return Integer.parseInt(new String(charArray));
     }
 

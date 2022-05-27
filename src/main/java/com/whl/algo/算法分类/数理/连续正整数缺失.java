@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 * 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
 * 输入：nums = [1,2,0]
 * 输出：3
- *思路:连续正整数
+ *思路:连续正整数【可以抽屉打标法】
 * */
 public class 连续正整数缺失 {
     public static void main(String[] args) {

@@ -13,7 +13,7 @@ import java.util.Set;
 * 输出：[1,2] 2+2 = 1+3
 * 思路:sumA−x+y=sumB+x−y
 * x=y+(sumA−sumB)/2
-​* 分别在 A和 B 中寻找满足上述条件的公式
+* 分别在 A和 B 中寻找满足上述条件的公式
 * */
 public class 糖果棒交换 {
     public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {

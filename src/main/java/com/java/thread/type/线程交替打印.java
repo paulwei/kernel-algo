@@ -5,9 +5,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class 线程交替打印 {
     public static void main(String[] args) {
-//        fun1();
+        fun1();
 //        fun2();
-        fun3();
+//        fun3();
     }
 
    //notify wait
@@ -38,7 +38,6 @@ public class 线程交替打印 {
                 synchronized (lock){
                     for(char c:c2){
                         System.out.println(c);
-                        lock.notify();
                         try {
                             lock.notify();
                             lock.wait();
