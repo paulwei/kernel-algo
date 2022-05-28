@@ -11,12 +11,21 @@ import com.whl.algo.tree.TreeNode;
 *
 * */
 public class 后序遍历 {
-    public static TreeNode postOrder(TreeNode treeNode){
+    public static void postOrder(TreeNode treeNode){
+        if(treeNode==null){
+            return ;
+        }
+        System.out.println(treeNode.val);
+        postOrder(treeNode.left);
+        postOrder(treeNode.right);
+    }
+
+    public static TreeNode postOrderBuild(TreeNode treeNode){
         if(treeNode==null){
             return null;
         }
-        treeNode.left =  postOrder(treeNode.left);
-        treeNode.right = postOrder(treeNode.right);
+        treeNode.left =  postOrderBuild(treeNode.left);
+        treeNode.right = postOrderBuild(treeNode.right);
         return treeNode;
     }
 
@@ -32,7 +41,8 @@ public class 后序遍历 {
 
     public static void main(String[] args) {
         TreeNode root = buildTree(1);
-        TreeNode t = postOrder(root);
+        TreeNode t = postOrderBuild(root);
+        postOrder(root);
     }
 
 }
