@@ -29,7 +29,7 @@ public class 层序遍历 {
             List<Integer> level = new ArrayList<Integer>();
             int currentLevelSize = queue.size(); //这个上层while循环获取size
             for (int i = 1; i <= currentLevelSize; ++i) {//层数
-                TreeNode node = queue.poll(); //当层循环拿出一个塞入两个左右子
+                TreeNode node = queue.poll(); //当层循环拿出一个塞入两个左右子,随着currentLevelSize变大，累加节点变大
                 level.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
