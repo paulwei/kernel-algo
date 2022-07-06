@@ -8,6 +8,10 @@ public class LinkNode {
     public LinkNode next;
     public LinkNode pre;
 
+    public LinkNode(int val) {
+        this.val = val;
+    }
+
     public int getVal() {
         return val;
     }

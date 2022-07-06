@@ -24,6 +24,16 @@ public class 反转链表{
         return cur;
     }
 
+    public static LinkNode reverse(LinkNode head){
+        if(head==null || head.next==null){
+            return head;
+        }
+        LinkNode node = reverse(head.next);//一直递归走到最后节点如4
+        head.next.next = head; //前一个节点赋值给后一个节点
+        head.next=null; //前一节点next断开
+        return node; //返回当前节点
+    }
+
     //双指针
     public static ListNode reverseList2(ListNode head) {
         ListNode pre = null;
