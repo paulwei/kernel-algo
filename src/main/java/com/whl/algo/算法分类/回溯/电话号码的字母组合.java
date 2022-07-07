@@ -39,12 +39,12 @@ public class 电话号码的字母组合 {
     }
 
     public static void backtrack(List<String> combinations, Map<Character, String> phoneMap, String digits, int index, StringBuffer combination) {
-        if (index == digits.length()) {
+        if (index == digits.length()) {//满足条件追加新条目
             combinations.add(combination.toString());
         } else {
             char digit = digits.charAt(index);
             String letters = phoneMap.get(digit);
-            int lettersCount = letters.length();
+            int lettersCount = letters.length();//输入组合数字
             for (int i = 0; i < lettersCount; i++) {
                 combination.append(letters.charAt(i));
                 backtrack(combinations, phoneMap, digits, index + 1, combination);
