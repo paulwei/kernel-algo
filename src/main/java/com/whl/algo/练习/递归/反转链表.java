@@ -11,17 +11,30 @@ public class 反转链表 {
         LinkNode node = reverse(head.next);//一直递归走到最后节点如4
         head.next.next = head; //前一个节点赋值给后一个节点
         head.next=null; //前一节点next断开
-        return node; //返回当前节点
+//        System.out.println("return:"+node.val);//一直打印头节点4
+        return null; //
     }
 
     public static void main(String[] args) {
-        LinkNode node = build();
-        LinkNode head = reverse(node);
-        while (head!=null){
-            System.out.println(head.val);
-            head = head.next;
+//        LinkNode node = build();
+
+        LinkNode a = new LinkNode(1);
+        LinkNode b = new LinkNode(2);
+        LinkNode c = new LinkNode(3);
+        LinkNode d = new LinkNode(4);
+        a.next=b;
+        b.next=c;
+        c.next=d;
+
+        reverse(a);
+
+        while (d!=null){
+            System.out.println(d.val);
+            d = d.next;
         }
     }
+
+
 
     public static LinkNode build(){
         LinkNode pre=null;

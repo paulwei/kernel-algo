@@ -24,14 +24,15 @@ public class 反转链表{
         return cur;
     }
 
-    public static LinkNode reverse(LinkNode head){
+    public static ListNode reverse(ListNode head){
         if(head==null || head.next==null){
             return head;
         }
-        LinkNode node = reverse(head.next);//一直递归走到最后节点如4
+        ListNode node = reverse(head.next);//一直递归走到最后节点如4
         head.next.next = head; //前一个节点赋值给后一个节点
         head.next=null; //前一节点next断开
-        return node; //返回当前节点
+        System.out.println("node:"+node.val);//一直打印3节点
+        return node; //返回头节点,局部变量防止丢失串联
     }
 
     //双指针
@@ -54,7 +55,7 @@ public class 反转链表{
         ListNode c = new ListNode(3);
         a.next=b;
         b.next=c;
-        ListNode r = reverseList2(a);
+        ListNode r = reverse(a);
         while (r!=null){
             System.out.println(r.val);
             r = r.next;
