@@ -45,7 +45,7 @@ public class 电话号码的字母组合 {
             char digit = digits.charAt(index);
             String letters = phoneMap.get(digit);
             int lettersCount = letters.length();//输入组合数字
-            for (int i = 0; i < lettersCount; i++) {
+            for (int i = 0; i < lettersCount; i++) {//每个循环迭代，递归index+1步进
                 combination.append(letters.charAt(i));
                 backtrack(combinations, phoneMap, digits, index + 1, combination);
                 combination.deleteCharAt(index);
