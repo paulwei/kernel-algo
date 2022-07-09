@@ -3,7 +3,6 @@ package com.whl.algo.算法分类.回溯;
 import com.alibaba.fastjson.JSON;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -19,7 +18,7 @@ public class 全排列 {
     }
 
     private static void dfs(int[] nums, List<Integer> tmp) {
-        System.out.println(Arrays.toString(nums) + "," + tmp);
+//        System.out.println(Arrays.toString(nums) + "," + tmp);
         if (tmp.size() == nums.length) {
             ans.add(new ArrayList<>(tmp));
         } else {
