@@ -13,6 +13,7 @@ public class 移动零 {
     public static void moveZeros(int[] nums){
         int slow =0;
         for(int fast=0;fast<nums.length;fast++ ){
+            System.out.println(fast+":"+slow);
             if(nums[fast]!=0){
                 nums[slow++]=nums[fast];//本身赋值本身也没错,slow 先使用
             }
