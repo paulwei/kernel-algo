@@ -2,7 +2,6 @@ package com.recursion;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BrokenBarrierException;
 
 /**
  * @Author: wangwei
@@ -147,7 +146,7 @@ public class _22_GenerateBrackets {
 
     public static void main(String[] args) {
         _22_GenerateBrackets t = new _22_GenerateBrackets();
-        List<String> list = t.solution4(3);
+        List<String> list = t.solution2(3);
         for (String s : list) {
             System.out.println(s);
         }
