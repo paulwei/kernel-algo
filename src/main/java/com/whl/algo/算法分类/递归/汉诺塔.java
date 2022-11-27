@@ -11,6 +11,12 @@ import java.util.LinkedList;
 *  输入：A = [2, 1, 0], B = [], C = []
 *  输出：C = [2, 1, 0]
 *  重点：构建模型  A-----> （借助） B ->C
+* 思路：移动汉诺塔总共需要三步： 归纳法理解递归
+      1、将N-1个圆盘移动到B柱（这样就腾出了空间）
+      2、将第N个圆盘移动到C柱
+      3、再将N-1个圆盘移动到C柱
+      这样就能完成目标
+      那N-1个圆盘要怎么移动？只要继续采用上面三步就行了，只不过目的地不一样
 *
 * */
 public class 汉诺塔 {
@@ -23,7 +29,6 @@ public class 汉诺塔 {
                 C.add(0, A.remove(0));
                 return;
             }
-
             hanota(n-1,A,C,B);
             System.out.println("A:"+JSON.toJSONString(A));
             System.out.println("B:"+JSON.toJSONString(B));

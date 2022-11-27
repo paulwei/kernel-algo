@@ -8,14 +8,21 @@ package com.whl.algo.算法分类.数理;
 * 解释：12 = 4 + 4 + 4
 * */
 public class 完全平方数 {
-    public int numSquares(int n) {
+    public static int numSquares(int n) {
         int[] dp = new int[n + 1]; // 默认初始化值都为0
         for (int i = 1; i <= n; i++) {
             dp[i] = i; // 最坏的情况就是每次+1
             for (int j = 1; i - j * j >= 0; j++) {
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1); // 动态转移方程
             }
+            System.out.println(String.format("dp[%s]:%s",i,dp[i]));
+
         }
         return dp[n];
+    }
+
+    public static void main(String[] args) {
+     int result =  numSquares(12);
+        System.out.println(result);
     }
 }

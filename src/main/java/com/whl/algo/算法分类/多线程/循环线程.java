@@ -9,9 +9,9 @@ public class 循环线程 {
     public static void main(String[] args) throws InterruptedException {
         下载线程 t = new 下载线程();
         t.start();
-        Thread.sleep(10000);
+        Thread.sleep(20000);
         t.shutDown();
-        System.out.println("Thread start");
+        System.out.println("Thread shutdown");
     }
 }
 

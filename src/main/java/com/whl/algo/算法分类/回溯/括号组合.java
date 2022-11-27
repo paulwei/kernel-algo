@@ -12,7 +12,7 @@ import java.util.List;
 * */
 public class 括号组合 {
     static List<String>  res = new ArrayList<>();
-    static int n =3;
+    static int n =2;
     public static void main(String[] args) {
 
         String letter = "";
